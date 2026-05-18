@@ -1,0 +1,1856 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="FarmMech108 - India's premier agribusiness consultancy based in Gandhinagar, Gujarat. Expert guidance in farm machinery, government subsidies, GEM portal, and agricultural services."/>
+  <meta property="og:title" content="FarmMech108 | Agribusiness Consultancy"/>
+  <meta property="og:description" content="Empowering India's agricultural sector through expert consultancy, government scheme support, and digital agriculture services."/>
+  <meta property="og:type" content="website"/>
+  <title>FarmMech108 | Agribusiness Consultancy & Agricultural Services</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    /* ============================
+       CSS CUSTOM PROPERTIES
+    ============================ */
+    :root {
+      --c-ink:       #121612;
+      --c-forest:    #244b39;
+      --c-sage:      #4aa485;
+      --c-fern:      #3b8f72;
+      --c-leaf:      #49b889;
+      --c-mint:      #e9f6ef;
+      --c-cream:     #f6f8f5;
+      --c-ivory:     #ffffff;
+      --c-sand:      #dfe7df;
+      --c-gold:      #f1b34c;
+      --c-amber:     #f7c86b;
+      --c-slate:     #4c5a52;
+      --c-white:     #ffffff;
+
+      --ff-display: 'Cormorant Garamond', Georgia, serif;
+      --ff-body:    'Outfit', sans-serif;
+
+      --radius-sm:   6px;
+      --radius-md:   12px;
+      --radius-lg:   20px;
+      --radius-xl:   32px;
+
+      --shadow-sm:   0 2px 8px rgba(18,22,18,.06);
+      --shadow-md:   0 8px 28px rgba(18,22,18,.09);
+      --shadow-lg:   0 18px 48px rgba(18,22,18,.12);
+      --shadow-xl:   0 32px 76px rgba(18,22,18,.14);
+
+      --transition:  0.35s cubic-bezier(0.4,0,0.2,1);
+
+      --max-w:       1240px;
+      --nav-h:       76px;
+    }
+
+    /* ============================
+       RESET & BASE
+    ============================ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      font-family: var(--ff-body);
+      background: var(--c-white);
+      color: var(--c-ink);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    img { display: block; max-width: 100%; }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+    button { border: none; cursor: pointer; font-family: inherit; }
+
+    /* ============================
+       SCROLLBAR
+    ============================ */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: var(--c-cream); }
+    ::-webkit-scrollbar-thumb { background: var(--c-fern); border-radius: 4px; }
+
+    /* ============================
+       TYPOGRAPHY HELPERS
+    ============================ */
+    .section-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--ff-body);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--c-fern);
+      margin-bottom: 16px;
+    }
+    .section-eyebrow::before {
+      content: '';
+      width: 32px;
+      height: 2px;
+      background: var(--c-fern);
+      border-radius: 2px;
+    }
+    .section-title {
+      font-family: var(--ff-display);
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 600;
+      line-height: 1.15;
+      color: var(--c-forest);
+    }
+    .section-title em {
+      font-style: italic;
+      color: var(--c-fern);
+    }
+    .section-lead {
+      font-size: 1.05rem;
+      color: var(--c-slate);
+      max-width: 560px;
+      line-height: 1.75;
+    }
+
+    /* ============================
+       LAYOUT
+    ============================ */
+    .container {
+      width: 100%;
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .section-pad { padding: 100px 0; }
+
+    /* ============================
+       BUTTONS
+    ============================ */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--ff-body);
+      font-size: 0.9rem;
+      font-weight: 600;
+      border-radius: 50px;
+      padding: 14px 28px;
+      transition: var(--transition);
+      letter-spacing: 0.02em;
+    }
+    .btn-primary {
+      background: var(--c-forest);
+      color: var(--c-white);
+      box-shadow: 0 4px 18px rgba(36,75,57,.22);
+    }
+    .btn-primary:hover {
+      background: var(--c-sage);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 26px rgba(36,75,57,.3);
+    }
+    .btn-outline {
+      background: transparent;
+      color: var(--c-forest);
+      border: 2px solid var(--c-forest);
+    }
+    .btn-outline:hover {
+      background: var(--c-forest);
+      color: var(--c-white);
+      transform: translateY(-2px);
+    }
+    .btn-ghost {
+      background: var(--c-white);
+      color: var(--c-forest);
+      border: 1.5px solid var(--c-sand);
+    }
+    .btn-ghost:hover {
+      background: var(--c-mint);
+      border-color: rgba(74,164,133,.28);
+      transform: translateY(-2px);
+    }
+    .btn-gold {
+      background: var(--c-forest);
+      color: var(--c-white);
+      box-shadow: 0 4px 18px rgba(36,75,57,.24);
+    }
+    .btn-gold:hover {
+      background: var(--c-sage);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 26px rgba(36,75,57,.28);
+    }
+    .btn-accent {
+      background: var(--c-gold);
+      color: var(--c-forest);
+      box-shadow: 0 4px 20px rgba(201,168,76,.35);
+    }
+    .btn-accent:hover {
+      background: var(--c-amber);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 32px rgba(201,168,76,.45);
+    }
+    .btn svg { width: 18px; height: 18px; flex-shrink: 0; }
+
+    /* ============================
+       NAVBAR
+    ============================ */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: var(--nav-h);
+      z-index: 1000;
+      transition: var(--transition);
+    }
+    .navbar.scrolled {
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(16px);
+      box-shadow: 0 2px 24px rgba(15,26,14,.08);
+    }
+    .navbar .container {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .navbar-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .navbar-logo {
+      width: 58px;
+      height: 58px;
+      background: var(--c-white);
+      border-radius: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .navbar-logo img { width: 100%; height: 100%; object-fit: contain; }
+    .navbar-wordmark {
+      font-family: var(--ff-display);
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--c-forest);
+      line-height: 1;
+    }
+    .navbar-wordmark span {
+      display: block;
+      font-family: var(--ff-body);
+      font-size: 0.6rem;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--c-fern);
+      margin-top: 2px;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .nav-link {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--c-slate);
+      padding: 8px 14px;
+      border-radius: 50px;
+      transition: var(--transition);
+      white-space: nowrap;
+    }
+    .nav-link:hover, .nav-link.active {
+      background: var(--c-cream);
+      color: var(--c-forest);
+    }
+    .nav-cta { margin-left: 8px; }
+
+    /* Hamburger */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      padding: 8px;
+      background: none;
+      z-index: 1100;
+    }
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--c-forest);
+      border-radius: 2px;
+      transition: var(--transition);
+    }
+    .hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+    /* Mobile menu */
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: var(--c-ivory);
+      z-index: 999;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      opacity: 0;
+      transform: scale(0.97);
+      transition: var(--transition);
+    }
+    .mobile-menu.open {
+      display: flex;
+      opacity: 1;
+      transform: scale(1);
+    }
+    .mobile-menu .nav-link {
+      font-size: 1.4rem;
+      font-family: var(--ff-display);
+      padding: 12px 24px;
+      font-weight: 600;
+    }
+
+    /* ============================
+       ABOUT SECTION
+    ============================ */
+    #about {
+      background: var(--c-white);
+      padding-top: calc(var(--nav-h) + 56px);
+    }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .about-visual {
+      position: relative;
+    }
+    .about-card {
+      background: var(--c-forest);
+      border-radius: var(--radius-xl);
+      padding: 60px 48px;
+      position: relative;
+      overflow: hidden;
+    }
+    .about-card::before {
+      content: '';
+      position: absolute;
+      bottom: -60px;
+      right: -60px;
+      width: 240px;
+      height: 240px;
+      border-radius: 50%;
+      background: rgba(82,183,136,.12);
+    }
+    .about-card-quote {
+      font-family: var(--ff-display);
+      font-size: 1.6rem;
+      font-style: italic;
+      color: rgba(255,255,255,.85);
+      line-height: 1.45;
+      margin-bottom: 32px;
+      position: relative;
+      z-index: 1;
+    }
+    .about-card-quote::before {
+      content: '"';
+      display: block;
+      font-size: 6rem;
+      line-height: 0.6;
+      color: rgba(82,183,136,.3);
+      margin-bottom: 16px;
+      font-family: var(--ff-display);
+    }
+    .about-card-meta {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      position: relative;
+      z-index: 1;
+    }
+    .about-card-avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: rgba(82,183,136,.25);
+      border: 2px solid rgba(82,183,136,.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--ff-display);
+      font-size: 1.3rem;
+      color: var(--c-leaf);
+    }
+    .about-card-name { font-weight: 600; color: var(--c-white); font-size: 0.9rem; }
+    .about-card-role { font-size: 0.78rem; color: rgba(255,255,255,.5); }
+
+    .about-pill {
+      position: absolute;
+      background: var(--c-white);
+      border-radius: var(--radius-md);
+      padding: 14px 20px;
+      box-shadow: var(--shadow-lg);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .about-pill-1 { top: -20px; right: -20px; }
+    .about-pill-2 { bottom: -20px; left: -20px; }
+    .about-pill-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .about-pill-icon svg { width: 20px; height: 20px; }
+    .about-pill-label { font-size: 0.75rem; font-weight: 500; color: var(--c-slate); white-space: nowrap; }
+    .about-pill-value { font-family: var(--ff-display); font-size: 1.1rem; font-weight: 700; color: var(--c-forest); line-height: 1; }
+
+    .about-content {}
+    .about-features {
+      margin-top: 36px;
+      display: grid;
+      gap: 20px;
+    }
+    .about-feature {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+    .about-feature-icon {
+      width: 44px;
+      height: 44px;
+      min-width: 44px;
+      border-radius: var(--radius-sm);
+      background: rgba(64,145,108,.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 2px;
+    }
+    .about-feature-icon svg { width: 22px; height: 22px; stroke: var(--c-fern); fill: none; stroke-width: 2; stroke-linecap: round; }
+    .about-feature-title { font-weight: 600; font-size: 0.95rem; color: var(--c-forest); margin-bottom: 4px; }
+    .about-feature-text { font-size: 0.875rem; color: var(--c-slate); line-height: 1.65; }
+
+    /* ============================
+       SERVICES
+    ============================ */
+    #services {
+      background: var(--c-cream);
+    }
+    .services-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 24px;
+      margin-bottom: 60px;
+    }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .service-card {
+      background: var(--c-white);
+      border-radius: var(--radius-lg);
+      padding: 36px 32px;
+      position: relative;
+      overflow: hidden;
+      transition: var(--transition);
+      border: 1px solid transparent;
+      cursor: default;
+    }
+    .service-card::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--c-fern), var(--c-leaf));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: var(--transition);
+    }
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lg);
+      border-color: rgba(64,145,108,.1);
+    }
+    .service-card:hover::before { transform: scaleX(1); }
+    .service-card.featured {
+      background: var(--c-forest);
+      color: var(--c-white);
+    }
+    .service-card.featured::before { display: none; }
+    .service-card.featured:hover { background: var(--c-sage); }
+
+    .service-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 24px;
+    }
+    .service-icon svg { width: 26px; height: 26px; stroke-width: 1.75; stroke-linecap: round; }
+    .service-card:not(.featured) .service-icon { background: rgba(64,145,108,.1); }
+    .service-card:not(.featured) .service-icon svg { stroke: var(--c-fern); fill: none; }
+    .service-card.featured .service-icon { background: rgba(255,255,255,.12); }
+    .service-card.featured .service-icon svg { stroke: var(--c-leaf); fill: none; }
+
+    .service-name {
+      font-family: var(--ff-display);
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 12px;
+      color: var(--c-forest);
+      line-height: 1.25;
+    }
+    .service-card.featured .service-name { color: var(--c-white); }
+    .service-desc {
+      font-size: 0.875rem;
+      line-height: 1.7;
+      color: var(--c-slate);
+      margin-bottom: 24px;
+    }
+    .service-card.featured .service-desc { color: rgba(255,255,255,.65); }
+    .service-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--c-fern);
+      letter-spacing: 0.04em;
+      transition: gap var(--transition);
+    }
+    .service-link svg { width: 16px; height: 16px; }
+    .service-card:hover .service-link { gap: 10px; }
+    .service-card.featured .service-link { color: var(--c-leaf); }
+
+    /* ============================
+       STATS BAND
+    ============================ */
+    .stats-band {
+      background: var(--c-ink);
+      padding: 80px 0;
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+    }
+    .stats-grid.visits-only {
+      grid-template-columns: minmax(240px, 520px);
+      justify-content: center;
+    }
+    .stat-item {
+      text-align: center;
+      padding: 24px;
+      position: relative;
+    }
+    .stat-item:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 25%;
+      height: 50%;
+      width: 1px;
+      background: rgba(255,255,255,.1);
+    }
+    .stat-num {
+      font-family: var(--ff-display);
+      font-size: 3.5rem;
+      font-weight: 700;
+      color: var(--c-white);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    .stat-num .stat-suffix {
+      font-size: 2rem;
+      color: var(--c-leaf);
+    }
+    .stat-label {
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.45);
+    }
+
+    /* ============================
+       WHY US
+    ============================ */
+    #why {
+      background: var(--c-white);
+    }
+    .why-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .why-features { display: grid; gap: 28px; }
+    .why-feature {
+      display: flex;
+      gap: 20px;
+      padding: 24px;
+      border-radius: var(--radius-md);
+      transition: var(--transition);
+    }
+    .why-feature:hover {
+      background: var(--c-cream);
+    }
+    .why-feature-num {
+      font-family: var(--ff-display);
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: rgba(64,145,108,.2);
+      line-height: 1;
+      min-width: 52px;
+    }
+    .why-feature-title { font-weight: 600; font-size: 1rem; color: var(--c-forest); margin-bottom: 6px; }
+    .why-feature-text { font-size: 0.875rem; color: var(--c-slate); line-height: 1.7; }
+
+    .why-visual {
+      position: relative;
+    }
+    .why-big-card {
+      background: linear-gradient(145deg, var(--c-sage), var(--c-forest));
+      border-radius: var(--radius-xl);
+      padding: 52px 48px;
+      color: var(--c-white);
+      position: relative;
+      overflow: hidden;
+    }
+    .why-big-card::before {
+      content: '';
+      position: absolute;
+      top: -80px;
+      right: -80px;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      background: rgba(255,255,255,.04);
+    }
+    .why-big-card-title {
+      font-family: var(--ff-display);
+      font-size: 1.8rem;
+      font-weight: 600;
+      line-height: 1.25;
+      margin-bottom: 20px;
+      position: relative;
+    }
+    .why-big-card-text {
+      font-size: 0.9rem;
+      line-height: 1.75;
+      color: rgba(255,255,255,.7);
+      margin-bottom: 36px;
+      position: relative;
+    }
+    .why-tags { display: flex; flex-wrap: wrap; gap: 10px; position: relative; }
+    .why-tag {
+      background: rgba(255,255,255,.1);
+      border: 1px solid rgba(255,255,255,.18);
+      border-radius: 50px;
+      padding: 8px 16px;
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: rgba(255,255,255,.85);
+    }
+
+    /* ============================
+       GOVT SCHEMES SECTION
+    ============================ */
+    #schemes {
+      background: var(--c-cream);
+    }
+    .schemes-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      margin-top: 56px;
+    }
+    .scheme-card {
+      background: var(--c-white);
+      border-radius: var(--radius-lg);
+      padding: 32px;
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+      transition: var(--transition);
+      border: 1px solid var(--c-sand);
+    }
+    .scheme-card:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-3px);
+      border-color: rgba(64,145,108,.2);
+    }
+    .scheme-badge {
+      min-width: 48px;
+      height: 48px;
+      border-radius: var(--radius-sm);
+      background: rgba(64,145,108,.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--ff-display);
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--c-fern);
+    }
+    .scheme-title { font-weight: 700; font-size: 1rem; color: var(--c-forest); margin-bottom: 6px; }
+    .scheme-text { font-size: 0.85rem; color: var(--c-slate); line-height: 1.65; }
+
+    /* ============================
+       TESTIMONIALS
+    ============================ */
+    #testimonials {
+      background: var(--c-forest);
+      overflow: hidden;
+      position: relative;
+    }
+    #testimonials::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(ellipse 60% 70% at 80% 30%, rgba(82,183,136,.15) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    #testimonials .section-eyebrow { color: var(--c-leaf); }
+    #testimonials .section-eyebrow::before { background: var(--c-leaf); }
+    #testimonials .section-title { color: var(--c-white); }
+    .testimonials-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 56px;
+    }
+    .testimonial-card {
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: var(--radius-lg);
+      padding: 36px;
+      backdrop-filter: blur(8px);
+      transition: var(--transition);
+    }
+    .testimonial-card:hover {
+      background: rgba(255,255,255,.1);
+      transform: translateY(-4px);
+    }
+    .testimonial-stars { display: flex; gap: 4px; margin-bottom: 20px; }
+    .testimonial-stars svg { width: 16px; height: 16px; fill: var(--c-gold); }
+    .testimonial-text {
+      font-family: var(--ff-display);
+      font-size: 1.05rem;
+      font-style: italic;
+      color: rgba(255,255,255,.85);
+      line-height: 1.65;
+      margin-bottom: 28px;
+    }
+    .testimonial-author { display: flex; align-items: center; gap: 12px; }
+    .testimonial-avatar {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: rgba(82,183,136,.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--ff-display);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--c-leaf);
+      border: 1px solid rgba(82,183,136,.3);
+    }
+    .testimonial-name { font-weight: 600; font-size: 0.9rem; color: var(--c-white); }
+    .testimonial-loc { font-size: 0.75rem; color: rgba(255,255,255,.45); margin-top: 2px; }
+
+    /* ============================
+       CONTACT
+    ============================ */
+    #contact {
+      background: var(--c-white);
+    }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 5fr 7fr;
+      gap: 80px;
+      align-items: start;
+    }
+    .contact-info-title {
+      font-family: var(--ff-display);
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: var(--c-forest);
+      line-height: 1.25;
+      margin-bottom: 20px;
+    }
+    .contact-info-text { font-size: 0.9rem; color: var(--c-slate); line-height: 1.75; margin-bottom: 36px; }
+    .contact-details { display: grid; gap: 20px; margin-bottom: 36px; }
+    .contact-detail-item { display: flex; gap: 14px; align-items: flex-start; }
+    .contact-detail-icon {
+      width: 42px;
+      height: 42px;
+      min-width: 42px;
+      border-radius: var(--radius-sm);
+      background: rgba(64,145,108,.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .contact-detail-icon svg { width: 20px; height: 20px; stroke: var(--c-fern); fill: none; stroke-width: 2; stroke-linecap: round; }
+    .contact-detail-label { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--c-fern); }
+    .contact-detail-value { font-size: 0.9rem; font-weight: 500; color: var(--c-forest); margin-top: 3px; }
+    .contact-wa-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #25D366;
+      color: var(--c-white);
+      border-radius: 50px;
+      padding: 14px 24px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: var(--transition);
+      box-shadow: 0 4px 20px rgba(37,211,102,.3);
+    }
+    .contact-wa-btn:hover { background: #1ebe5d; transform: translateY(-2px); box-shadow: 0 8px 32px rgba(37,211,102,.4); }
+    .contact-wa-btn svg { width: 20px; height: 20px; fill: var(--c-white); }
+
+    .contact-form {
+      background: var(--c-white);
+      border-radius: var(--radius-xl);
+      padding: 52px 48px;
+      box-shadow: var(--shadow-md);
+    }
+    .contact-form-title { font-family: var(--ff-display); font-size: 1.6rem; font-weight: 600; color: var(--c-forest); margin-bottom: 32px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .form-group { margin-bottom: 20px; }
+    .form-group label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--c-slate);
+      margin-bottom: 8px;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 14px 18px;
+      border: 1.5px solid var(--c-sand);
+      border-radius: var(--radius-md);
+      font-family: var(--ff-body);
+      font-size: 0.9rem;
+      color: var(--c-ink);
+      background: var(--c-ivory);
+      transition: var(--transition);
+      outline: none;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--c-fern);
+      background: var(--c-white);
+      box-shadow: 0 0 0 4px rgba(64,145,108,.1);
+    }
+    .form-group textarea { resize: vertical; min-height: 120px; }
+    .form-submit { width: 100%; padding: 16px; font-size: 1rem; border-radius: var(--radius-md); }
+    .form-note { font-size: 0.75rem; color: var(--c-slate); text-align: center; margin-top: 14px; opacity: 0.7; }
+    .form-success {
+      display: none;
+      text-align: center;
+      padding: 40px;
+      color: var(--c-forest);
+    }
+    .form-success svg { width: 56px; height: 56px; stroke: var(--c-fern); fill: none; stroke-width: 1.5; margin: 0 auto 16px; }
+    .form-success h3 { font-family: var(--ff-display); font-size: 1.6rem; margin-bottom: 10px; }
+    .form-success p { font-size: 0.9rem; color: var(--c-slate); }
+
+    /* ============================
+       FOOTER
+    ============================ */
+    .footer {
+      background: var(--c-ink);
+      padding: 80px 0 40px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1.5fr;
+      gap: 60px;
+      margin-bottom: 60px;
+    }
+    .footer-brand {}
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+    .footer-logo-mark {
+      width: 48px;
+      height: 48px;
+      background: var(--c-white);
+      border-radius: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .footer-logo-mark img { width: 100%; height: 100%; object-fit: contain; }
+    .footer-wordmark { font-family: var(--ff-display); font-size: 1.3rem; font-weight: 700; color: var(--c-white); }
+    .footer-brand-text { font-size: 0.85rem; color: rgba(255,255,255,.45); line-height: 1.7; margin-bottom: 28px; }
+    .footer-socials { display: flex; gap: 10px; }
+    .footer-social {
+      width: 38px;
+      height: 38px;
+      border-radius: var(--radius-sm);
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+    }
+    .footer-social:hover { background: var(--c-fern); border-color: var(--c-fern); }
+    .footer-social svg { width: 16px; height: 16px; fill: rgba(255,255,255,.6); }
+    .footer-social:hover svg { fill: var(--c-white); }
+
+    .footer-col-title { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,.5); margin-bottom: 20px; }
+    .footer-links { display: grid; gap: 10px; }
+    .footer-link { font-size: 0.875rem; color: rgba(255,255,255,.5); transition: var(--transition); }
+    .footer-link:hover { color: var(--c-leaf); }
+
+    .footer-contact-item { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 16px; }
+    .footer-contact-icon { min-width: 20px; }
+    .footer-contact-icon svg { width: 16px; height: 16px; stroke: var(--c-fern); fill: none; stroke-width: 2; margin-top: 2px; }
+    .footer-contact-text { font-size: 0.85rem; color: rgba(255,255,255,.55); line-height: 1.6; }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,.08);
+      padding-top: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .footer-copy { font-size: 0.8rem; color: rgba(255,255,255,.3); }
+    .footer-legal { display: flex; gap: 20px; }
+    .footer-legal a { font-size: 0.8rem; color: rgba(255,255,255,.3); transition: color var(--transition); }
+    .footer-legal a:hover { color: var(--c-leaf); }
+
+    /* ============================
+       FLOATING BUTTONS
+    ============================ */
+    .floating-btns {
+      position: fixed;
+      bottom: 28px;
+      right: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      z-index: 900;
+    }
+    .float-btn {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: var(--shadow-lg);
+      transition: var(--transition);
+      position: relative;
+    }
+    .float-btn:hover { transform: scale(1.1); }
+    .float-btn::before {
+      content: attr(data-tip);
+      position: absolute;
+      right: 64px;
+      background: var(--c-ink);
+      color: var(--c-white);
+      padding: 6px 12px;
+      border-radius: var(--radius-sm);
+      font-size: 0.75rem;
+      font-weight: 500;
+      white-space: nowrap;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity var(--transition);
+    }
+    .float-btn:hover::before { opacity: 1; }
+    .float-wa { background: #25D366; }
+    .float-call { background: var(--c-forest); }
+    .float-btn svg { width: 24px; height: 24px; }
+    .float-wa svg { fill: var(--c-white); }
+    .float-call svg { stroke: var(--c-white); fill: none; stroke-width: 2; stroke-linecap: round; }
+
+    /* ============================
+       SCROLL REVEAL
+    ============================ */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+
+    /* ============================
+       RESPONSIVE
+    ============================ */
+    @media (max-width: 1024px) {
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .about-grid, .why-grid, .contact-grid { grid-template-columns: 1fr; gap: 48px; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .about-visual { order: -1; }
+    }
+    @media (max-width: 768px) {
+      :root { --nav-h: 64px; }
+      .section-pad { padding: 72px 0; }
+      .nav-links, .nav-cta { display: none; }
+      .hamburger { display: flex; }
+      .services-header { flex-direction: column; align-items: flex-start; }
+      .services-grid, .testimonials-grid { grid-template-columns: 1fr; }
+      .schemes-grid { grid-template-columns: 1fr; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .stat-item:nth-child(2)::after { display: none; }
+      .footer-grid { grid-template-columns: 1fr; gap: 36px; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+      .form-row { grid-template-columns: 1fr; }
+      .contact-form { padding: 32px 24px; }
+      .about-card { padding: 40px 28px; }
+      .about-pill-1, .about-pill-2 { display: none; }
+    }
+    @media (max-width: 480px) {
+      .stats-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ============================
+     NAVIGATION
+============================ -->
+<nav class="navbar" id="navbar">
+  <div class="container">
+    <a href="#about" class="navbar-brand">
+      <div class="navbar-logo">
+        <img src="farmmech108.png" alt="FarmMech108 logo"/>
+      </div>
+      <div class="navbar-wordmark">
+        FarmMech108
+        <span>Agribusiness Consultancy</span>
+      </div>
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="#about" class="nav-link active">Who We Are</a></li>
+      <li><a href="#services" class="nav-link">Services</a></li>
+      <li><a href="#schemes" class="nav-link">Schemes</a></li>
+      <li><a href="#contact" class="nav-link">Contact</a></li>
+    </ul>
+    <a href="#contact" class="btn btn-primary nav-cta">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+      Book Appointment
+    </a>
+
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#about" class="nav-link" onclick="closeMobileMenu()">Who We Are</a>
+  <a href="#services" class="nav-link" onclick="closeMobileMenu()">Services</a>
+  <a href="#schemes" class="nav-link" onclick="closeMobileMenu()">Schemes</a>
+  <a href="#contact" class="nav-link" onclick="closeMobileMenu()">Contact</a>
+  <a href="#contact" class="btn btn-primary" style="margin-top:16px" onclick="closeMobileMenu()">Book Appointment</a>
+</div>
+
+<!-- ============================
+     ABOUT
+============================ -->
+<section class="section-pad" id="about">
+  <div class="container">
+    <div class="about-grid">
+
+      <div class="about-visual reveal">
+        <div class="about-card">
+          <div class="about-card-quote">
+            Empowering India's agricultural sector through expert consultancy, technology, and relentless farmer support.
+          </div>
+          <div class="about-card-meta">
+            <div class="about-card-avatar">F</div>
+            <div>
+              <div class="about-card-name">FarmMech108 Mission</div>
+              <div class="about-card-role">Gandhinagar, Gujarat | Est. 2017</div>
+            </div>
+          </div>
+        </div>
+        <div class="about-pill about-pill-1">
+          <div class="about-pill-icon" style="background:rgba(201,168,76,.12)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="2" stroke-linecap="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <div>
+            <div class="about-pill-value">Since 2017</div>
+            <div class="about-pill-label">Gujarat Based</div>
+          </div>
+        </div>
+        <div class="about-pill about-pill-2">
+          <div class="about-pill-icon" style="background:rgba(64,145,108,.12)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#40916c" stroke-width="2" stroke-linecap="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <div>
+            <div class="about-pill-value">India</div>
+            <div class="about-pill-label">Service Reach</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-content reveal reveal-delay-2">
+        <div class="section-eyebrow">Who We Are</div>
+        <h1 class="section-title" style="margin-bottom:20px">
+          India's Trusted<br/><em>Agribusiness Partner</em>
+        </h1>
+        <p class="section-lead">
+          FarmMech108 is a comprehensive agribusiness consultancy and service provider based in Gandhinagar, Gujarat, dedicated to empowering the agricultural and allied sectors across India.
+        </p>
+
+        <div class="about-features">
+          <div class="about-feature">
+            <div class="about-feature-icon">
+              <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            </div>
+            <div>
+              <div class="about-feature-title">Headquartered in Gandhinagar</div>
+              <div class="about-feature-text">Operating from Gujarat's capital, we serve farmers and agri-businesses across all of India with local expertise and national reach.</div>
+            </div>
+          </div>
+          <div class="about-feature">
+            <div class="about-feature-icon">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+            </div>
+            <div>
+              <div class="about-feature-title">End-to-End Agricultural Support</div>
+              <div class="about-feature-text">From government scheme applications to digital marketing, we handle every aspect of your agribusiness journey under one roof.</div>
+            </div>
+          </div>
+          <div class="about-feature">
+            <div class="about-feature-icon">
+              <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            </div>
+            <div>
+              <div class="about-feature-title">Government-Approved Consultants</div>
+              <div class="about-feature-text">Expert in PM-KISAN, SMAM, RKVY, and other central and state government schemes with a proven success rate.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================
+     SERVICES
+============================ -->
+<section class="section-pad" id="services">
+  <div class="container">
+    <div class="services-header reveal">
+      <div>
+        <div class="section-eyebrow">What We Do</div>
+        <h2 class="section-title">Comprehensive <em>Agricultural</em><br/>Services</h2>
+      </div>
+      <a href="#contact" class="btn btn-outline" style="white-space:nowrap">View All Services</a>
+    </div>
+
+    <div class="services-grid">
+
+      <div class="service-card featured reveal">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93V18h2v1.93A8.01 8.01 0 0 1 4.07 13H6v-2H4.07A8.01 8.01 0 0 1 11 4.07V6h2V4.07A8.01 8.01 0 0 1 19.93 11H18v2h1.93A8.01 8.01 0 0 1 11 19.93z"/></svg>
+        </div>
+        <div class="service-name">Agribusiness Consultancy</div>
+        <div class="service-desc">Strategic advisory for farmers, agri-entrepreneurs and rural businesses. Business planning, feasibility studies, and market entry support.</div>
+        <a href="#contact" class="service-link">
+          Get Consultation
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <div class="service-card reveal reveal-delay-1">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><path d="M9 14l6-6M9.5 8.5a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm5 5a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/><path d="M12 2a10 10 0 1 0 0 20A10 10 0 0 0 12 2z"/></svg>
+        </div>
+        <div class="service-name">Government Subsidy Assistance</div>
+        <div class="service-desc">End-to-end support for PM-KISAN, SMAM, RKVY, PMFBY, and other central & state government agricultural subsidies and schemes.</div>
+        <a href="#contact" class="service-link">
+          Apply Now
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <div class="service-card reveal reveal-delay-2">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
+        </div>
+        <div class="service-name">Farm Machinery Advisory</div>
+        <div class="service-desc">Expert guidance on selecting, financing, and maintaining agricultural machinery. FPO empanelment and CHCS setup support.</div>
+        <a href="#contact" class="service-link">
+          Learn More
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <div class="service-card reveal reveal-delay-1">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6M9 12h6M9 15h4"/></svg>
+        </div>
+        <div class="service-name">GEM Portal Registration & Bidding</div>
+        <div class="service-desc">Complete GeM portal onboarding, product listing optimization, and active bidding support for government procurement contracts.</div>
+        <a href="#contact" class="service-link">
+          Register Now
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <div class="service-card reveal reveal-delay-2">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+        </div>
+        <div class="service-name">Digital Agriculture Services</div>
+        <div class="service-desc">Farm digitization, drone advisory, precision agriculture consulting, and smart irrigation planning for modern farmers.</div>
+        <a href="#contact" class="service-link">
+          Explore
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <div class="service-card reveal reveal-delay-3">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><line x1="10" y1="9" x2="8" y2="9"/></svg>
+        </div>
+        <div class="service-name">Business Documentation & Registration</div>
+        <div class="service-desc">MSME, Udyam, FPO, FSSAI, and other business registrations. ISO certification and compliance documentation assistance.</div>
+        <a href="#contact" class="service-link">
+          Get Started
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <div class="service-card reveal">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <div class="service-name">Digital Marketing & CRM</div>
+        <div class="service-desc">Social media management, SEO, lead generation, and CRM setup tailored for agribusinesses and rural service providers.</div>
+        <a href="#contact" class="service-link">
+          Learn More
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <div class="service-card reveal reveal-delay-1">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2M9 9h.01M15 9h.01"/></svg>
+        </div>
+        <div class="service-name">Agri-Startup Support</div>
+        <div class="service-desc">Idea validation, pitch deck creation, investor connect, and incubation support for agriculture-focused startups across India.</div>
+        <a href="#contact" class="service-link">
+          Connect With Us
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
+      <div class="service-card reveal reveal-delay-2">
+        <div class="service-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div class="service-name">Tender Support & Event Management</div>
+        <div class="service-desc">Agricultural exhibition, kisan mela, and trade fair support. Government tender documentation and submission assistance.</div>
+        <a href="#contact" class="service-link">
+          Enquire
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================
+     STATS
+============================ -->
+<div class="stats-band">
+  <div class="container">
+    <div class="stats-grid visits-only">
+      <div class="stat-item reveal">
+        <div class="stat-num"><span class="stat-val" data-target="157534" data-counter-key="website-visits">0</span></div>
+        <div class="stat-label">Website Visits</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================
+     WHY US
+============================ -->
+<section class="section-pad" id="why">
+  <div class="container">
+    <div class="why-grid">
+
+      <div class="reveal">
+        <div class="section-eyebrow">Why Choose Us</div>
+        <h2 class="section-title" style="margin-bottom:40px">The <em>FarmMech108</em><br/>Advantage</h2>
+        <div class="why-features">
+          <div class="why-feature">
+            <div class="why-feature-num">01</div>
+            <div>
+              <div class="why-feature-title">Domain Expertise You Can Trust</div>
+              <div class="why-feature-text">Years of hands-on experience in agribusiness consultancy with a team of agriculture experts, policy specialists, and technology advisors.</div>
+            </div>
+          </div>
+          <div class="why-feature">
+            <div class="why-feature-num">02</div>
+            <div>
+              <div class="why-feature-title">End-to-End Service Model</div>
+              <div class="why-feature-text">From initial consultation and documentation to implementation and follow-up - we stay with you at every step of your agricultural journey.</div>
+            </div>
+          </div>
+          <div class="why-feature">
+            <div class="why-feature-num">03</div>
+            <div>
+              <div class="why-feature-title">Government Scheme Specialists</div>
+              <div class="why-feature-text">Deep knowledge of PM-KISAN, SMAM, RKVY, PMKVY, and other schemes with proven track record of successful applications.</div>
+            </div>
+          </div>
+          <div class="why-feature">
+            <div class="why-feature-num">04</div>
+            <div>
+              <div class="why-feature-title">Rural & Digital Expertise</div>
+              <div class="why-feature-text">Bridging traditional farming knowledge with modern digital tools - making technology accessible for every farmer and agri-entrepreneur.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal reveal-delay-2">
+        <div class="why-big-card">
+          <div class="why-big-card-title">Ready to transform your agricultural business?</div>
+          <div class="why-big-card-text">
+            Whether you're a farmer seeking government support, an agri-entrepreneur looking to scale, or a company entering the rural market - FarmMech108 is your trusted partner. Our consultants are just a call or click away.
+          </div>
+          <div class="why-tags">
+            <span class="why-tag">Farmers</span>
+            <span class="why-tag">FPOs & SHGs</span>
+            <span class="why-tag">Agri-Startups</span>
+            <span class="why-tag">Machinery Dealers</span>
+            <span class="why-tag">Rural Entrepreneurs</span>
+            <span class="why-tag">Exporters</span>
+          </div>
+          <div style="margin-top:36px; display:flex; gap:12px; flex-wrap:wrap;">
+            <a href="#contact" class="btn btn-gold">Book Consultation</a>
+            <a href="https://wa.me/918981108108" class="btn btn-ghost" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="white" width="18" height="18"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              WhatsApp Us
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================
+     GOVERNMENT SCHEMES
+============================ -->
+<section class="section-pad" id="schemes">
+  <div class="container">
+    <div class="reveal" style="text-align:center; max-width:600px; margin:0 auto 0">
+      <div class="section-eyebrow">Government Support</div>
+      <h2 class="section-title">Schemes We <em>Specialize In</em></h2>
+      <p class="section-lead" style="margin:16px auto 0; text-align:center">
+        We help farmers and agri-businesses access the full range of central and state government benefits available to the agricultural sector.
+      </p>
+    </div>
+    <div class="schemes-grid">
+      <div class="scheme-card reveal">
+        <div class="scheme-badge">PM</div>
+        <div>
+          <div class="scheme-title">PM-KISAN</div>
+          <div class="scheme-text">Pradhan Mantri Kisan Samman Nidhi - direct income support of Rs. 6000/year to eligible farmers. Application, verification, and correction support.</div>
+        </div>
+      </div>
+      <div class="scheme-card reveal reveal-delay-1">
+        <div class="scheme-badge">SM</div>
+        <div>
+          <div class="scheme-title">SMAM - Sub Mission on Agri Mechanization</div>
+          <div class="scheme-text">Subsidy assistance for farm machinery purchases. Help with applications, dealer coordination, and disbursement follow-up.</div>
+        </div>
+      </div>
+      <div class="scheme-card reveal reveal-delay-2">
+        <div class="scheme-badge">RK</div>
+        <div>
+          <div class="scheme-title">RKVY - Rashtriya Krishi Vikas Yojana</div>
+          <div class="scheme-text">Project preparation and funding applications for agricultural infrastructure, storage, processing, and marketing under RKVY.</div>
+        </div>
+      </div>
+      <div class="scheme-card reveal reveal-delay-3">
+        <div class="scheme-badge">GE</div>
+        <div>
+          <div class="scheme-title">GeM Portal - Government e-Marketplace</div>
+          <div class="scheme-text">End-to-end GeM registration, catalog management, bid participation, and order fulfillment support for agri-product sellers.</div>
+        </div>
+      </div>
+      <div class="scheme-card reveal">
+        <div class="scheme-badge">MS</div>
+        <div>
+          <div class="scheme-title">MSME & Udyam Registration</div>
+          <div class="scheme-text">Official MSME registration enabling access to priority sector lending, government tender preferences, and business subsidies.</div>
+        </div>
+      </div>
+      <div class="scheme-card reveal reveal-delay-1">
+        <div class="scheme-badge">PM</div>
+        <div>
+          <div class="scheme-title">PMFBY - Crop Insurance</div>
+          <div class="scheme-text">Pradhan Mantri Fasal Bima Yojana enrollment assistance, claim filing support, and settlement coordination for distressed farmers.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================
+     TESTIMONIALS
+============================ -->
+<section class="section-pad" id="testimonials">
+  <div class="container">
+    <div class="reveal" style="text-align:center; max-width:540px; margin:0 auto">
+      <div class="section-eyebrow">Client Stories</div>
+      <h2 class="section-title" style="color:white">What Farmers <em>Say About Us</em></h2>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card reveal">
+        <div class="testimonial-stars">
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <div class="testimonial-text">"FarmMech108 helped me get Rs. 2.5 lakh subsidy on a tractor I was struggling to buy for 3 years. Their team handled everything from paperwork to disbursement."</div>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">R</div>
+          <div>
+            <div class="testimonial-name">Rajesh Patel</div>
+            <div class="testimonial-loc">Anand, Gujarat</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card reveal reveal-delay-1">
+        <div class="testimonial-stars">
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <div class="testimonial-text">"Our FPO registered on GeM portal through FarmMech108 and within 3 months we secured our first government order worth Rs. 8 lakhs. Excellent professional guidance."</div>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">M</div>
+          <div>
+            <div class="testimonial-name">Meena Desai</div>
+            <div class="testimonial-loc">Vadodara, Gujarat</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card reveal reveal-delay-2">
+        <div class="testimonial-stars">
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+        </div>
+        <div class="testimonial-text">"As a young agri-entrepreneur, FarmMech108's startup support was invaluable. They helped with business plan, MSME registration, and digital marketing - all under one roof."</div>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">A</div>
+          <div>
+            <div class="testimonial-name">Amit Sharma</div>
+            <div class="testimonial-loc">Jaipur, Rajasthan</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================
+     CONTACT
+============================ -->
+<section class="section-pad" id="contact">
+  <div class="container">
+    <div class="contact-grid">
+
+      <div class="reveal">
+        <div class="section-eyebrow">Get In Touch</div>
+        <div class="contact-info-title">Let's Talk About Your<br/>Agricultural Goals</div>
+        <div class="contact-info-text">
+          Whether you have a query about government schemes, need machinery advice, or want to grow your agribusiness - our team is ready to help. Book a free 30-minute consultation today.
+        </div>
+        <div class="contact-details">
+          <div class="contact-detail-item">
+            <div class="contact-detail-icon">
+              <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div>
+              <div class="contact-detail-label">Office</div>
+              <div class="contact-detail-value">Gandhinagar, Gujarat, India</div>
+            </div>
+          </div>
+          <div class="contact-detail-item">
+            <div class="contact-detail-icon">
+              <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <div>
+              <div class="contact-detail-label">Phone / WhatsApp</div>
+              <div class="contact-detail-value">+91 8981108108</div>
+            </div>
+          </div>
+          <div class="contact-detail-item">
+            <div class="contact-detail-icon">
+              <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div>
+              <div class="contact-detail-label">Email</div>
+              <div class="contact-detail-value">info@farmmech108.com</div>
+            </div>
+          </div>
+          <div class="contact-detail-item">
+            <div class="contact-detail-icon">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div>
+              <div class="contact-detail-label">Working Hours</div>
+              <div class="contact-detail-value">Mon-Sat: 9:00 AM - 6:00 PM</div>
+            </div>
+          </div>
+        </div>
+        <a href="https://wa.me/918981108108" class="contact-wa-btn" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Chat on WhatsApp
+        </a>
+      </div>
+
+      <div class="reveal reveal-delay-2">
+        <div class="contact-form" id="contactFormContainer">
+          <div class="contact-form-title">Book a Free Consultation</div>
+          <div id="formFields">
+            <div class="form-row">
+              <div class="form-group">
+                <label>Full Name *</label>
+                <input type="text" id="fname" placeholder="Your name" required/>
+              </div>
+              <div class="form-group">
+                <label>Phone Number *</label>
+                <input type="tel" id="fphone" placeholder="+91 XXXXX XXXXX" required/>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Email Address</label>
+              <input type="email" id="femail" placeholder="your@email.com"/>
+            </div>
+            <div class="form-group">
+              <label>City / District</label>
+              <input type="text" id="fcity" placeholder="e.g. Gandhinagar, Gujarat"/>
+            </div>
+            <div class="form-group">
+              <label>Service Required</label>
+              <select id="fservice">
+                <option value="">Select a service...</option>
+                <option>Agribusiness Consultancy</option>
+                <option>Government Subsidy Assistance</option>
+                <option>Farm Machinery Advisory</option>
+                <option>GEM Portal Registration</option>
+                <option>Digital Agriculture Services</option>
+                <option>Business Documentation & Registration</option>
+                <option>Digital Marketing & CRM</option>
+                <option>Agri-Startup Support</option>
+                <option>Tender Support & Event Management</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Your Message (Optional)</label>
+              <textarea id="fmessage" placeholder="Describe your requirement or question..."></textarea>
+            </div>
+            <button class="btn btn-primary form-submit" onclick="submitForm()">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              Send Message & Book Appointment
+            </button>
+            <div class="form-note">Secure: Your information is safe with us. We'll respond within 24 hours.</div>
+          </div>
+          <div class="form-success" id="formSuccess">
+            <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            <h3>Thank You!</h3>
+            <p>Your consultation request has been received. Our team will contact you within 24 hours.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================
+     FOOTER
+============================ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <div class="footer-logo-mark">
+            <img src="farmmech108.png" alt="FarmMech108 logo"/>
+          </div>
+          <div class="footer-wordmark">FarmMech108</div>
+        </div>
+        <div class="footer-brand-text">
+          India's trusted agribusiness consultancy based in Gandhinagar, Gujarat. Empowering farmers and agri-entrepreneurs across the country since 2017.
+        </div>
+        <div class="footer-socials">
+          <a href="https://www.facebook.com/farmmech108/" class="footer-social" target="_blank" rel="noopener" aria-label="Facebook">
+            <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/farmmech108/" class="footer-social" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="https://wa.me/918981108108" class="footer-social" target="_blank" rel="noopener" aria-label="WhatsApp">
+            <svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <div class="footer-col-title">Quick Links</div>
+        <div class="footer-links">
+          <a href="#about" class="footer-link">Who We Are</a>
+          <a href="#services" class="footer-link">Services</a>
+          <a href="#schemes" class="footer-link">Government Schemes</a>
+          <a href="#contact" class="footer-link">Contact Us</a>
+          <a href="#contact" class="footer-link">Book Appointment</a>
+        </div>
+      </div>
+
+      <div>
+        <div class="footer-col-title">Our Services</div>
+        <div class="footer-links">
+          <a href="#services" class="footer-link">Agribusiness Consultancy</a>
+          <a href="#services" class="footer-link">Subsidy Assistance</a>
+          <a href="#services" class="footer-link">Farm Machinery</a>
+          <a href="#services" class="footer-link">GEM Portal</a>
+          <a href="#services" class="footer-link">Digital Agriculture</a>
+          <a href="#services" class="footer-link">MSME Registration</a>
+          <a href="#services" class="footer-link">Startup Support</a>
+        </div>
+      </div>
+
+      <div>
+        <div class="footer-col-title">Contact Info</div>
+        <div class="footer-contact-item">
+          <div class="footer-contact-icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div class="footer-contact-text">Gandhinagar, Gujarat, India</div>
+        </div>
+        <div class="footer-contact-item">
+          <div class="footer-contact-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72A12 12 0 0 0 10.46 7a2 2 0 0 1-.45 2.11L8.09 10.9a16 16 0 0 0 5 5l1.27-1.27a2 2 0 0 1 2.11-.45 12 12 0 0 0 3.28.7A2 2 0 0 1 22 16.92z"/></svg></div>
+          <div class="footer-contact-text">+91 8981108108</div>
+        </div>
+        <div class="footer-contact-item">
+          <div class="footer-contact-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+          <div class="footer-contact-text">info@farmmech108.com</div>
+        </div>
+        <div class="footer-contact-item">
+          <div class="footer-contact-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+          <div class="footer-contact-text">Mon-Sat: 9 AM - 6 PM</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-copy">&copy; 2026 FarmMech108. All rights reserved. | Gandhinagar, Gujarat.</div>
+      <div class="footer-legal">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms & Conditions</a>
+        <a href="#">Sitemap</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ============================
+     FLOATING BUTTONS
+============================ -->
+<div class="floating-btns">
+  <a href="https://wa.me/918981108108" class="float-btn float-wa" data-tip="WhatsApp Us" target="_blank" rel="noopener" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+  <a href="tel:+918981108108" class="float-btn float-call" data-tip="Call Us Now" aria-label="Call">
+    <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+  </a>
+</div>
+
+<!-- ============================
+     JAVASCRIPT
+============================ -->
+<script>
+  // ---- Navbar scroll effect ----
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 40);
+  });
+
+  // ---- Hamburger menu ----
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    mobileMenu.classList.toggle('open');
+    document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+  });
+  function closeMobileMenu() {
+    hamburger.classList.remove('open');
+    mobileMenu.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  // ---- Scroll reveal ----
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // ---- Counter animation ----
+  function animateCounter(el, target, duration = 2000) {
+    const start = performance.now();
+    const isLarge = target > 1000;
+    function update(now) {
+      const elapsed = now - start;
+      const progress = Math.min(elapsed / duration, 1);
+      const ease = 1 - Math.pow(1 - progress, 4);
+      const current = Math.round(ease * target);
+      el.textContent = isLarge ? current.toLocaleString('en-IN') : current;
+      if (progress < 1) requestAnimationFrame(update);
+    }
+    requestAnimationFrame(update);
+  }
+
+  // Stats band counters
+  async function resolveCounterValue(el) {
+    const endpoint = el.dataset.counterEndpoint;
+    if (!endpoint) return parseInt(el.dataset.target, 10) || 0;
+    try {
+      const response = await fetch(endpoint, { cache: 'no-store' });
+      if (!response.ok) throw new Error('Counter endpoint failed');
+      const data = await response.json();
+      const value = Number(data.value ?? data.count ?? data.total);
+      return Number.isFinite(value) ? value : parseInt(el.dataset.target, 10) || 0;
+    } catch {
+      return parseInt(el.dataset.target, 10) || 0;
+    }
+  }
+
+  const statObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.querySelectorAll('.stat-val').forEach(async el => {
+          const target = await resolveCounterValue(el);
+          animateCounter(el, target);
+        });
+        statObserver.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.5 });
+  document.querySelectorAll('.stats-grid').forEach(el => statObserver.observe(el));
+
+  // ---- Contact form submission ----
+  function submitForm() {
+    const name = document.getElementById('fname').value.trim();
+    const phone = document.getElementById('fphone').value.trim();
+    const email = document.getElementById('femail').value.trim();
+    const city = document.getElementById('fcity').value.trim();
+    const service = document.getElementById('fservice').value.trim();
+    const message = document.getElementById('fmessage').value.trim();
+    if (!name || !phone) {
+      alert('Please fill in your name and phone number.');
+      return;
+    }
+    const phoneDigits = phone.replace(/\D/g, '');
+    if (phoneDigits.length < 10) {
+      alert('Please enter a valid phone number.');
+      return;
+    }
+    const lines = [
+      'Hello FarmMech108, I would like to book a free consultation.',
+      `Name: ${name}`,
+      `Phone: ${phone}`,
+      email ? `Email: ${email}` : '',
+      city ? `City/District: ${city}` : '',
+      service ? `Service: ${service}` : '',
+      message ? `Message: ${message}` : ''
+    ].filter(Boolean);
+    window.open(`https://wa.me/918981108108?text=${encodeURIComponent(lines.join('\n'))}`, '_blank', 'noopener');
+    document.getElementById('formFields').style.display = 'none';
+    document.getElementById('formSuccess').style.display = 'block';
+  }
+
+  // ---- Active nav on scroll ----
+  const sections = ['about','services','schemes','testimonials','contact'];
+  window.addEventListener('scroll', () => {
+    let current = 'about';
+    sections.forEach(id => {
+      const el = document.getElementById(id);
+      if (el && window.scrollY >= el.offsetTop - 100) current = id;
+    });
+    document.querySelectorAll('.nav-link').forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === '#' + current) {
+        link.classList.add('active');
+      }
+    });
+  });
+</script>
+</body>
+</html>
