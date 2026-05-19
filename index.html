@@ -116,7 +116,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 <link rel="stylesheet" id="elementor-icons-ekiticons-css" href="https://farmmech108.com/wp-content/plugins/elementskit-lite/modules/elementskit-icon-pack/assets/css/ekiticons.css?ver=3.7.7" media="print" onload="this.media='all'"/>
 <noscript><link rel="stylesheet" id="elementor-icons-ekiticons-css" href="https://farmmech108.com/wp-content/plugins/elementskit-lite/modules/elementskit-icon-pack/assets/css/ekiticons.css?ver=3.7.7" media="all"/></noscript>
 <script data-cfasync="false" src="https://farmmech108.com/wp-includes/js/jquery/jquery.min.js?ver=3.7.1" id="jquery-core-js"></script>
-<script data-cfasync="false" src="https://farmmech108.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1" id="jquery-migrate-js"></script>
+
 <script id="jquery-js-after">
 !function($){"use strict";$(document).ready(function(){$(this).scrollTop()>100&&$(".hfe-scroll-to-top-wrap").removeClass("hfe-scroll-to-top-hide"),$(window).scroll(function(){$(this).scrollTop()<100?$(".hfe-scroll-to-top-wrap").fadeOut(300):$(".hfe-scroll-to-top-wrap").fadeIn(300)}),$(".hfe-scroll-to-top-wrap").on("click",function(){$("html, body").animate({scrollTop:0},300);return!1})})}(jQuery);
 !function($){'use strict';$(document).ready(function(){var bar=$('.hfe-reading-progress-bar');if(!bar.length)return;$(window).on('scroll',function(){var s=$(window).scrollTop(),d=$(document).height()-$(window).height(),p=d? s/d*100:0;bar.css('width',p+'%')});});}(jQuery);
@@ -659,9 +659,9 @@ var wpspagevisit = {"ajaxurl":"https://farmmech108.com/wp-admin/admin-ajax.php",
 
 		</style>
 	
-<style id="final-mobile-menu-fix">
+<style id="ultimate-mobile-menu-fix">
 .real-mobile-toggle{
-display:none !important;
+display:none;
 }
 
 @media(max-width:768px){
@@ -669,13 +669,15 @@ display:none !important;
 .real-mobile-toggle{
 display:block !important;
 width:100% !important;
-padding:15px 20px !important;
 background:#1a2a3a !important;
 color:#fff !important;
-border:none !important;
+padding:15px 20px !important;
 font-size:20px !important;
 font-weight:700 !important;
+border:none !important;
 cursor:pointer !important;
+position:relative !important;
+z-index:999999 !important;
 }
 
 .elementskit-menu-container{
@@ -685,8 +687,8 @@ top:100% !important;
 left:0 !important;
 width:100% !important;
 background:#fff !important;
-z-index:999999 !important;
 padding:20px !important;
+z-index:999999 !important;
 box-shadow:0 10px 30px rgba(0,0,0,.15) !important;
 }
 
@@ -701,8 +703,8 @@ gap:0 !important;
 }
 
 .elementskit-menu-container li{
-width:100% !important;
 display:block !important;
+width:100% !important;
 }
 
 .elementskit-menu-container a{
@@ -1697,12 +1699,9 @@ display:none !important;
 <link rel="stylesheet" id="owl.carousel-css" href="https://farmmech108.com/wp-content/plugins/gum-elementor-addon//css/owl.carousel.css?ver=6.9.4" media="all"/>
 <link rel="stylesheet" id="widget-social-icons-css" href="https://farmmech108.com/wp-content/plugins/elementor/assets/css/widget-social-icons.min.css?ver=3.33.4" media="all"/>
 <link rel="stylesheet" id="e-apple-webkit-css" href="https://farmmech108.com/wp-content/plugins/elementor/assets/css/conditionals/apple-webkit.min.css?ver=3.33.4" media="all"/>
-<script defer src="https://farmmech108.com/wp-includes/js/dist/hooks.min.js?ver=dd5603f07f9220ed27f1" id="wp-hooks-js"></script>
-<script defer src="https://farmmech108.com/wp-includes/js/dist/i18n.min.js?ver=c26c3dc7bed366793375" id="wp-i18n-js"></script>
-<script id="wp-i18n-js-after">
-wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
-//# sourceURL=wp-i18n-js-after
-</script>
+
+
+
 <script defer src="https://farmmech108.com/wp-content/plugins/contact-form-7/includes/swv/js/index.js?ver=6.1.4" id="swv-js"></script>
 <script id="contact-form-7-js-before">
 var wpcf7 = {
@@ -1797,14 +1796,15 @@ const a=JSON.parse(document.getElementById("wp-emoji-settings").textContent),o=(
 <script>document.querySelector('.elementskit-menu-hamburger')?.addEventListener('click',()=>{document.querySelector('.elementskit-menu-container')?.classList.toggle('active');document.querySelector('.elementskit-menu-overlay')?.classList.toggle('active')});document.querySelector('.elementskit-menu-overlay')?.addEventListener('click',()=>{document.querySelector('.elementskit-menu-container')?.classList.remove('active');document.querySelector('.elementskit-menu-overlay')?.classList.remove('active')});</script>
 
 <script>
-document.addEventListener('DOMContentLoaded',function(){
+document.addEventListener('DOMContentLoaded', function(){
 
 const btn = document.getElementById('realMobileToggle');
 const menu = document.querySelector('.elementskit-menu-container');
 
 if(btn && menu){
 
-btn.addEventListener('click',function(){
+btn.addEventListener('click', function(e){
+e.preventDefault();
 menu.classList.toggle('active');
 });
 
