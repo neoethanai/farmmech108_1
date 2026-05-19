@@ -1813,6 +1813,150 @@ menu.classList.toggle('active');
 });
 </script>
 
+<style>
+
+/* ===== REAL MOBILE MENU FIX ===== */
+
+@media(max-width:768px){
+
+.real-mobile-bar{
+display:flex !important;
+justify-content:space-between;
+align-items:center;
+padding:15px 20px;
+background:#1a2a3a;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+z-index:999999;
+}
+
+.real-mobile-logo{
+color:#fff;
+font-size:20px;
+font-weight:700;
+}
+
+.real-mobile-btn{
+background:none;
+border:none;
+color:#fff;
+font-size:30px;
+cursor:pointer;
+}
+
+.real-mobile-menu{
+display:none;
+position:fixed;
+top:60px;
+left:0;
+width:100%;
+background:#fff;
+z-index:999999;
+box-shadow:0 10px 25px rgba(0,0,0,.15);
+padding:20px;
+}
+
+.real-mobile-menu.active{
+display:block;
+}
+
+.real-mobile-menu ul{
+list-style:none;
+padding:0;
+margin:0;
+display:flex;
+flex-direction:column;
+}
+
+.real-mobile-menu li{
+border-bottom:1px solid #eee;
+}
+
+.real-mobile-menu a{
+display:block;
+padding:15px 0;
+text-decoration:none;
+color:#222;
+font-size:18px;
+font-weight:600;
+}
+
+/* HIDE OLD ELEMENTOR MENU */
+
+.elementskit-menu-container,
+.elementskit-menu-hamburger{
+display:none !important;
+}
+
+/* PREVENT CONTENT GOING UNDER FIXED BAR */
+
+body{
+padding-top:70px !important;
+}
+
+}
+
+/* HIDE CUSTOM MENU ON DESKTOP */
+
+@media(min-width:769px){
+
+.real-mobile-bar,
+.real-mobile-menu{
+display:none !important;
+}
+
+}
+
+</style>
+
+<!-- REAL MOBILE MENU -->
+
+<div class="real-mobile-bar">
+
+<div class="real-mobile-logo">
+FarmMech
+</div>
+
+<button class="real-mobile-btn" id="realMenuBtn">
+☰
+</button>
+
+</div>
+
+<nav class="real-mobile-menu" id="realMobileMenu">
+
+<ul>
+<li><a href="/">Home</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#gallery">Gallery</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+
+</nav>
+
+<script>
+
+document.addEventListener("DOMContentLoaded",function(){
+
+const btn = document.getElementById("realMenuBtn");
+const menu = document.getElementById("realMobileMenu");
+
+if(btn && menu){
+
+btn.addEventListener("click",function(){
+
+menu.classList.toggle("active");
+
+});
+
+}
+
+});
+
+</script>
 </body>
 </html> 
 
