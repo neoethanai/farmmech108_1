@@ -1,0 +1,28 @@
+
+img{
+max-width:100%;
+height:auto;
+display:block;
+}
+
+body{
+overflow-x:hidden;
+}
+
+@media(max-width:768px){
+
+.elementor-col-50,
+.elementor-col-33,
+.elementor-col-25{
+width:100% !important;
+}
+
+.e-grid{
+grid-template-columns:1fr !important;
+}
+
+.eael-post-grid{
+grid-template-columns:1fr !important;
+}
+
+}
