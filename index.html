@@ -6,7 +6,7 @@
 <link rel="preconnect" href="https://farmmech108.com"/>
 <link rel="dns-prefetch" href="https://farmmech108.com"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1"/>
-	<link rel="profile" href="http://gmpg.org/xfn/11"/>
+	<link rel="profile" href="https://gmpg.org/xfn/11" />
 	<link rel="pingback" href="https://farmmech108.com/xmlrpc.php"/>
 	<title>farmmech</title>
 <meta name="robots" content="max-image-preview:large"/>
@@ -658,7 +658,73 @@ var wpspagevisit = {"ajaxurl":"https://farmmech108.com/wp-admin/admin-ajax.php",
 }
 
 		</style>
-	</head>
+	
+<style id="final-mobile-menu-fix">
+.real-mobile-toggle{
+display:none !important;
+}
+
+@media(max-width:768px){
+
+.real-mobile-toggle{
+display:block !important;
+width:100% !important;
+padding:15px 20px !important;
+background:#1a2a3a !important;
+color:#fff !important;
+border:none !important;
+font-size:20px !important;
+font-weight:700 !important;
+cursor:pointer !important;
+}
+
+.elementskit-menu-container{
+display:none !important;
+position:absolute !important;
+top:100% !important;
+left:0 !important;
+width:100% !important;
+background:#fff !important;
+z-index:999999 !important;
+padding:20px !important;
+box-shadow:0 10px 30px rgba(0,0,0,.15) !important;
+}
+
+.elementskit-menu-container.active{
+display:block !important;
+}
+
+.elementskit-menu-container ul{
+display:flex !important;
+flex-direction:column !important;
+gap:0 !important;
+}
+
+.elementskit-menu-container li{
+width:100% !important;
+display:block !important;
+}
+
+.elementskit-menu-container a{
+display:block !important;
+padding:14px 0 !important;
+border-bottom:1px solid #eee !important;
+font-size:18px !important;
+}
+
+.elementor-hidden-phone,
+.elementor-hidden-mobile{
+display:block !important;
+}
+
+.elementskit-menu-hamburger{
+display:none !important;
+}
+
+}
+</style>
+
+</head>
 
 <body class="home wp-singular page-template-default page page-id-20 wp-embed-responsive wp-theme-hello-elementor ehf-header ehf-footer ehf-template-hello-elementor ehf-stylesheet-hello-elementor jkit-color-scheme hello-elementor-default elementor-default elementor-kit-22 elementor-page elementor-page-20">
  
@@ -1729,6 +1795,24 @@ const a=JSON.parse(document.getElementById("wp-emoji-settings").textContent),o=(
 //# sourceURL=https://farmmech108.com/wp-includes/js/wp-emoji-loader.min.js
 </script>
 <script>document.querySelector('.elementskit-menu-hamburger')?.addEventListener('click',()=>{document.querySelector('.elementskit-menu-container')?.classList.toggle('active');document.querySelector('.elementskit-menu-overlay')?.classList.toggle('active')});document.querySelector('.elementskit-menu-overlay')?.addEventListener('click',()=>{document.querySelector('.elementskit-menu-container')?.classList.remove('active');document.querySelector('.elementskit-menu-overlay')?.classList.remove('active')});</script>
+
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+
+const btn = document.getElementById('realMobileToggle');
+const menu = document.querySelector('.elementskit-menu-container');
+
+if(btn && menu){
+
+btn.addEventListener('click',function(){
+menu.classList.toggle('active');
+});
+
+}
+
+});
+</script>
+
 </body>
 </html> 
 
