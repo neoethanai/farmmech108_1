@@ -321,7 +321,9 @@ var wpspagevisit = {"ajaxurl":"https://farmmech108.com/wp-admin/admin-ajax.php",
 
 			.elementskit-menu-container ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 20px; justify-content: center; }
 			.elementskit-menu-container a { color: #333; font-weight: 500; padding: 8px 0; display: inline-block; }
-			.elementskit-menu-hamburger { display: none; }
+			.elementskit-menu-hamburger { display: none; cursor: pointer; border: none; background: none; padding: 8px; }
+			.elementskit-menu-hamburger-icon { display: block; width: 25px; height: 3px; background: #333; margin: 5px 0; border-radius: 2px; }
+			.elementskit-menu-close { display: none !important; }
 			.wpr-nav-menu { list-style: none; margin: 0; padding: 0; display: flex; gap: 15px; flex-wrap: wrap; }
 			.wpr-menu-item { color: #333; font-weight: 500; padding: 8px 0; display: inline-block; }
 			.wpr-mobile-toggle { display: none; }
@@ -568,6 +570,23 @@ var wpspagevisit = {"ajaxurl":"https://farmmech108.com/wp-admin/admin-ajax.php",
     .elementor-col-33:last-child { width: 100% !important; }
     /* Nav: hide desktop nav, show hamburger */
     .elementskit-menu-hamburger { display: flex !important; }
+    /* Offcanvas menu panel */
+    .elementskit-menu-offcanvas-elements {
+        position: fixed; top: 0; right: -280px; width: 280px; height: 100%;
+        z-index: 99999; background: #fff; transition: right .35s ease;
+        overflow-y: auto; padding: 60px 20px 20px; box-shadow: -5px 0 15px rgba(0,0,0,.1);
+    }
+    .elementskit-menu-offcanvas-elements.active { right: 0; }
+    .elementskit-menu-offcanvas-elements > ul { display: flex !important; flex-direction: column !important; gap: 0 !important; }
+    .elementskit-menu-offcanvas-elements a {
+        padding: 12px 15px !important; border-bottom: 1px solid #eee; font-size: 1rem;
+    }
+    /* Overlay */
+    .elementskit-menu-overlay {
+        position: fixed; inset: 0; background: rgba(0,0,0,.5); z-index: 99998;
+        display: none; cursor: pointer;
+    }
+    .elementskit-menu-overlay.active { display: block; }
 }
 
 /* Desktop (>1024px) */
@@ -604,10 +623,23 @@ var wpspagevisit = {"ajaxurl":"https://farmmech108.com/wp-admin/admin-ajax.php",
     /* Contact form */
     [data-id="fb31cb5"] .wpcf7-form input,
     [data-id="fb31cb5"] .wpcf7-form textarea { font-size: .9rem !important; }
-    /* Nav hamburger show */
+    /* Nav hamburger show + offcanvas panel */
     .elementskit-menu-hamburger { display: flex !important; }
-    .elementskit-menu-container > ul { display: none !important; }
-    .elementskit-menu-container.active > ul { display: flex !important; flex-direction: column !important; }
+    .elementskit-menu-offcanvas-elements {
+        position: fixed; top: 0; right: -280px; width: 280px; height: 100%;
+        z-index: 99999; background: #fff; transition: right .35s ease;
+        overflow-y: auto; padding: 60px 20px 20px; box-shadow: -5px 0 15px rgba(0,0,0,.1);
+    }
+    .elementskit-menu-offcanvas-elements.active { right: 0; }
+    .elementskit-menu-offcanvas-elements > ul { display: flex !important; flex-direction: column !important; gap: 0 !important; }
+    .elementskit-menu-offcanvas-elements a {
+        padding: 12px 15px !important; border-bottom: 1px solid #eee; font-size: 1rem;
+    }
+    .elementskit-menu-overlay {
+        position: fixed; inset: 0; background: rgba(0,0,0,.5); z-index: 99998;
+        display: none; cursor: pointer;
+    }
+    .elementskit-menu-overlay.active { display: block; }
     /* Trust index single column */
     .ti-widget .ti-col-3 .ti-reviews-container-wrapper { grid-template-columns: 1fr !important; }
     /* Heading font sizes */
@@ -1696,6 +1728,7 @@ var WprConfig = {"ajaxurl":"https://farmmech108.com/wp-admin/admin-ajax.php","re
 const a=JSON.parse(document.getElementById("wp-emoji-settings").textContent),o=(window._wpemojiSettings=a,"wpEmojiSettingsSupports"),s=["flag","emoji"];function i(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(o,JSON.stringify(t))}catch(e){}}function c(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data);e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0);const a=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data);return t.every((e,t)=>e===a[t])}function p(e,t){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var n=e.getImageData(16,16,1,1);for(let e=0;e<n.data.length;e++)if(0!==n.data[e])return!1;return!0}function u(e,t,n,a){switch(t){case"flag":return n(e,"\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f","\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f")?!1:!n(e,"\ud83c\udde8\ud83c\uddf6","\ud83c\udde8\u200b\ud83c\uddf6")&&!n(e,"\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f","\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f");case"emoji":return!a(e,"\ud83e\u1fac8")}return!1}function f(e,t,n,a){let r;const o=(r="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):document.createElement("canvas")).getContext("2d",{willReadFrequently:!0}),s=(o.textBaseline="top",o.font="600 32px Arial",{});return e.forEach(e=>{s[e]=t(o,e,n,a)}),s}function r(e){var t=document.createElement("script");t.src=e,t.defer=!0,document.head.appendChild(t)}a.supports={everything:!0,everythingExceptFlag:!0},new Promise(t=>{let n=function(){try{var e=JSON.parse(sessionStorage.getItem(o));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+f.toString()+"("+[JSON.stringify(s),u.toString(),c.toString(),p.toString()].join(",")+"));",a=new Blob([e],{type:"text/javascript"});const r=new Worker(URL.createObjectURL(a),{name:"wpTestEmojiSupports"});return void(r.onmessage=e=>{i(n=e.data),r.terminate(),t(n)})}catch(e){}i(n=f(s,u,c,p))}t(n)}).then(e=>{for(const n in e)a.supports[n]=e[n],a.supports.everything=a.supports.everything&&a.supports[n],"flag"!==n&&(a.supports.everythingExceptFlag=a.supports.everythingExceptFlag&&a.supports[n]);var t;a.supports.everythingExceptFlag=a.supports.everythingExceptFlag&&!a.supports.flag,a.supports.everything||((t=a.source||{}).concatemoji?r(t.concatemoji):t.wpemoji&&t.twemoji&&(r(t.twemoji),r(t.wpemoji)))});
 //# sourceURL=https://farmmech108.com/wp-includes/js/wp-emoji-loader.min.js
 </script>
+<script>document.querySelector('.elementskit-menu-hamburger')?.addEventListener('click',()=>{document.querySelector('.elementskit-menu-container')?.classList.toggle('active');document.querySelector('.elementskit-menu-overlay')?.classList.toggle('active')});document.querySelector('.elementskit-menu-overlay')?.addEventListener('click',()=>{document.querySelector('.elementskit-menu-container')?.classList.remove('active');document.querySelector('.elementskit-menu-overlay')?.classList.remove('active')});</script>
 </body>
 </html> 
 
